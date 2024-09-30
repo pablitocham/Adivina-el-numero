@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kenburns-bottom {
+    -webkit-animation: kenburns-bottom 5s ease-out infinite;
+    animation: kenburns-bottom 5s ease-out infinite;
+}
+
+@keyframes kenburns-bottom {
+    0% {
+        transform: scale(1) translateY(0);
+        transform-origin: 50% 84%;
+    }
+
+    100% {
+        transform: scale(1.25) translateY(15px);
+        transform-origin: bottom;
+    }
+}
+
+body {
+    background-image: url(img/magia.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    animation: kenburns-bottom 15s ease-out infinite;
+}
+
+.magia {
+    text-align: center;
+    align-items: center;
+    margin-top: 250px;
+    color: rgb(255, 255, 255);
+    border-radius: 35px;
+    box-shadow: 0 5px 8px 10px;
+}
+
+.magia:hover {
+    background-color: rgb(6, 10, 10);
+}
+
+input [type="number"],
+button {
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+#numeroEntrada {
+    text-align: center;
+    font-weight: bold;
+    height: 25px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+h1,
+p {
+    font-weight: bold;
+}
+
+.btn {
+    position: fixed;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 50rem;
+    left: 50%;
+}

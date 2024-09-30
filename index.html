@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Adivina el Número</title>
+</head>
+
+<body>
+    <div class="magia">
+        <h1> ADIVINA EL NÚMERO</h1>
+        <p>Introduce un numero del 1 al 100 </p>
+        <input type="number" id="numeroEntrada">
+        <button onclick="chequearResultado()">Comprobar</button>
+        <p id="mensaje"></p>
+    </div>
+    <div class="btn">
+        <button onclick=playAudio()>avengers</button>
+        <audio id="avengers" src="./music/avengers.mp3" loop></audio>
+    </div>
+    <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
