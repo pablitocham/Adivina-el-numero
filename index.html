@@ -5,22 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/dr strange.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Adivina el Número</title>
 </head>
 
 <body>
-    <div class="magia">
-        <h1> ADIVINA EL NÚMERO</h1>
-        <p>Introduce un numero del 1 al 100 </p>
-        <input type="number" id="numeroEntrada">
-        <button onclick="chequearResultado()">Comprobar</button>
-        <p id="mensaje"></p>
+    <div class="game-container">
+        <h1 class="game-title"> ADIVINA EL NÚMERO</h1>
+        <p class="game-description">Adivina el número que estoy pensando del 1 al 100 ¿Puedes hacerlo? </p>
+
+        <div class="input-container">
+            <input type="number" id="numeroEntrada" class="number-input" placeholder="Ingresa el número" min="1"
+                max="100">
+        </div>
+        <button class="check-button" id="checkButton" onclick="chequearResultado()">
+            comprobar
+        </button>
+
+        <div class="game-stats">
+            <div class="stat-item">
+                <span class="stat-value" id="intentos">0</span>
+                <span>Intentos</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="mejor"></span>
+                <span>Mejor</span>
+                <button class="reset-best-btn" onclick="resetear()" title="Resetear Puntaje"><i
+                        class="fa-solid fa-power-off"></i></button>
+            </div>
+        </div>
     </div>
-    <div class="btn">
-        <button onclick=playAudio()>avengers</button>
-        <audio id="avengers" src="./music/avengers.mp3" loop></audio>
-    </div>
+
+    <button class="audio-control" onclick="playAudio()" id="audioBtn"><i class="fa-solid fa-music"></i></button>
+
+    <audio id="avengers" src="./music/avengers.mp3" loop></audio>
     <script src="main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
