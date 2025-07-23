@@ -50,6 +50,8 @@ function chequearResultado() {
                 `¡Ganaste en ${intentos} intentos!`,
             showConfirmButton: true,
             confirmButtonText: 'Jugar de nuevo',
+            showCancelButton:true,
+            cancelButtonText:'No, gracias',
             allowOutsideClick: false,
         }).then((result) => {
             if (result.isConfirmed) {
