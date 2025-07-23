@@ -1,7 +1,7 @@
 let numeroAzar = Math.floor(Math.random() * 100 + 1)
 let numeroEntrada = document.getElementById("numeroEntrada")
 let intentos = 0
-let mejorPuntuacion = sessionStorage.getItem('mejorPuntuacion') || '---'
+let mejorPuntuacion = localStorage.getItem('mejorPuntuacion') || '---'
 let bloquearToast = false
 let juegoTerminado = false
 
@@ -45,13 +45,12 @@ function chequearResultado() {
             imageWidth: 100,
             imageHeight: 100,
             title: "Felicitaciones Ganaste!!",
-            text: esMejorPuntuacion ?
-                `¡Nuevo record lo lograste en ${intentos} intentos ` :
-                `¡Ganaste en ${intentos} intentos!`,
-            showConfirmButton: true,
+            html: esMejorPuntuacion
+                ? `<p>¡Nuevo récord! lo lograste en <strong>${intentos}</strong> intentos.</p><p>¿Quieres superar tu récord actual?</p>`
+                : `<p>¡Ganaste en <strong>${intentos}</strong> intentos!</p><p>¿Quieres Jugar otra vez?</p>`,
             confirmButtonText: 'Jugar de nuevo',
-            showCancelButton:true,
-            cancelButtonText:'No, gracias',
+            showCancelButton: true,
+            cancelButtonText: 'No jugar',
             allowOutsideClick: false,
         }).then((result) => {
             if (result.isConfirmed) {
